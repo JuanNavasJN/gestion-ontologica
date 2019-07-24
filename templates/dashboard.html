@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        
+      <div class="sidebar">
+        <ul>
+          <li>Registrar Evaluador</li>
+          <li>Registrar Aspirante</li>
+          <li>Configurar 16PF</li>
+          <li>Configurar Wartegg</li>
+        </ul>
+      </div>  
+      
+          
+    {% else %}
+        <script>
+            location.replace("/")
+        </script>
+    {% endif %}
+{% endblock content %}
