@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Gestión</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'material-admin/node_modules/mdi/css/materialdesignicons.min.css' %}">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'material-admin/css/style.css' %}">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="{% static 'material-admin/images/favicon.png' %}" />
+</head>
+
+<body>
+  <div class="body-wrapper">
+    
+    {% block sidebar %} 
+      {% include 'dashboard/sidebar.html' %}
+    {% endblock %}
+
+    {% block navbar %}
+      {% include 'dashboard/navbar.html' %}
+    {% endblock %}
+   
+    <div class="page-wrapper mdc-toolbar-fixed-adjust">
+      
+      {% block main %}{% endblock %}  
+     
+      {% block footer %}
+        {% include 'dashboard/footer.html' %}
+      {% endblock %}
+    </div>
+  </div>
+  <!-- body wrapper -->
+  <!-- plugins:js -->
+  <script src="{% static 'material-admin/node_modules/material-components-web/dist/material-components-web.min.js' %}"></script>
+  <script src="{% static 'material-admin/node_modules/jquery/dist/jquery.min.js' %}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <script src="{% static 'material-admin/node_modules/chart.js/dist/Chart.min.js' %}"></script>
+  <script src="{% static 'material-admin/node_modules/progressbar.js/dist/progressbar.min.js' %}"></script>
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="{% static 'material-admin/js/misc.js' %}"></script>
+  <script src="{% static 'material-admin/js/material.js' %}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{% static 'material-admin/js/dashboard.js' %}"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
