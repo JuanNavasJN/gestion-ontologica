@@ -4,8 +4,11 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Hola {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Cerrar sesión</a></p>
+  <script>
+      location.replace("/dash")
+  </script>
+  <!-- Hola {{ user.username }}!
+  <p><a href="{% url 'logout' %}">Cerrar sesión</a></p> -->
 {% else %}
   <p>Usted no ha iniciado sesión</p>
   <a href="{% url 'login' %}">Ingresar</a> 

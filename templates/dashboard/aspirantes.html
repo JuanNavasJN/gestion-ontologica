@@ -1,0 +1,160 @@
+{% extends './index.html' %}
+
+{% block main_content %}
+    <section class="content">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Aspirantes</h3>
+            </div>
+        </div>
+        <div class="row mb-4 mt-2">
+            <div class="col-sm-12">
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#agregarModal">Agregar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Cédula</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>23432123</td>
+                            <td>mdkfe@mdo.net</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editarModal" ><i class="fas fa-pencil-alt"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>23432123</td>
+                            <td>mdkfe@mdo.net</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#editarModal"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>23432123</td>
+                            <td>mdkfe@mdo.net</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#editarModal"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>23432123</td>
+                            <td>mdkfe@mdo.net</td>
+                            <td>
+                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#editarModal"></i></button>
+                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="modal fade" id="agregarModal" tabindex="-1" role="dialog" aria-labelledby="agregarAspirante" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="agregarAspirante">Agregar Aspirante</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="" class="form">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Nombre" required>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Apellido" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <input type="number" class="form-control" placeholder="Cédula" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <input type="email" class="form-control" placeholder="Correo" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarAspirante" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editarAspirante">Editar Aspirante</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <form action="" class="form">
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Nombre" required>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" class="form-control" placeholder="Apellido" required>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <input type="number" class="form-control" placeholder="Cédula" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row mt-2">
+                                        <div class="col">
+                                            <input type="email" class="form-control" placeholder="Correo" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </section>
+{% endblock %}

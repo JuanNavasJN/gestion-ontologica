@@ -1,0 +1,12 @@
+.link{
+    text-decoration: none;
+    color: #212529;
+}
+
+.link:hover{
+    text-decoration: none;
+}
+
+.content{
+    padding-left: 10vw;
+}
