@@ -26,93 +26,22 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>23432123</td>
-                            <td>mdkfe@mdo.net</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editarModal" ><i class="fas fa-pencil-alt"></i></button>
-                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>23432123</td>
-                            <td>mdkfe@mdo.net</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#editarModal"></i></button>
-                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>23432123</td>
-                            <td>mdkfe@mdo.net</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#editarModal"></i></button>
-                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>23432123</td>
-                            <td>mdkfe@mdo.net</td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-sm"><i class="fas fa-pencil-alt" data-toggle="modal" data-target="#editarModal"></i></button>
-                                <button type="button" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
+                        {% for evaluator in evaluators %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td>{{ evaluator.first_name }}</td>
+                                <td>{{ evaluator.last_name }}</td>
+                                <td>{{ evaluator.username }}</td>
+                                <td>{{ evaluator.email }}</td>
+                                <td>
+                                    <button type="button" user-id="{{evaluator.id}}" class="btn btn-primary btn-sm btn-edit" data-toggle="modal" data-target="#editarModal" ><i user-id="{{evaluator.id}}" class="fas fa-pencil-alt"></i></button>
+                                    <button type="button" user-id="{{evaluator.id}}" class="btn btn-danger btn-sm btn-delete"><i user-id="{{evaluator.id}}" class="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        
                     </tbody>
                 </table>
-
-                <div class="modal fade" id="agregarModal" tabindex="-1" role="dialog" aria-labelledby="agregarEvaluador" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="agregarEvaluador">Agregar Evaluador</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <form action="" class="form">
-                                <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col">
-                                            <input type="text" class="form-control" placeholder="Nombre" required>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control" placeholder="Apellido" required>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-2">
-                                        <div class="col">
-                                            <input type="number" class="form-control" placeholder="Cédula" required>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="row mt-2">
-                                        <div class="col">
-                                            <input type="email" class="form-control" placeholder="Correo" required>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="submit" class="btn btn-primary">Guardar</button>
-                                </div>
-                            </form>
-                            
-                        </div>
-                    </div>
-                </div>
 
                 <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarEvaluador" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -123,25 +52,25 @@
                                 <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
-                            <form action="" class="form">
+                            <form action="" class="form" id="editEvaluator">
                                 <div class="modal-body">
                                     <div class="row">
                                         <div class="col">
-                                            <input type="text" class="form-control" placeholder="Nombre" required>
+                                            <input type="text" id="edit-firstName" class="form-control" placeholder="Nombre" required>
                                         </div>
                                         <div class="col">
-                                            <input type="text" class="form-control" placeholder="Apellido" required>
+                                            <input type="text" id="edit-lastName" class="form-control" placeholder="Apellido" required>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col">
-                                            <input type="number" class="form-control" placeholder="Cédula" required>
+                                            <input type="number" id="edit-username" class="form-control" placeholder="Cédula" required>
                                         </div>
                                     </div>
                                     
                                     <div class="row mt-2">
                                         <div class="col">
-                                            <input type="email" class="form-control" placeholder="Correo" required>
+                                            <input type="email" id="edit-email" class="form-control" placeholder="Correo" required>
                                         </div>
                                     </div>
                                 </div>
@@ -154,10 +83,68 @@
                         </div>
                     </div>
                 </div>
+
+                <script>
+                    $('.btn-edit').click( e => {
+                        let id = e.target.getAttribute('user-id')
+                        localStorage.setItem('currentId', null)
+
+                        fetch(`/admin/user/${id}`)
+                            .then(res => res.json())
+                            .catch(error => console.error('Error:', error))
+                            .then(response => {
+                                //console.log('Success:', response)
+                                localStorage.setItem('currentId', response.id)
+                                
+                                const { first_name, last_name, email, username} = response
+                                $('#edit-firstName').val(first_name)
+                                $('#edit-lastName').val(last_name)
+                                $('#edit-email').val(email)
+                                $('#edit-username').val(username)
+                            });
+                    })
+
+                    $('.btn-delete').click( e => {
+                        let id = e.target.getAttribute('user-id')
+
+                        fetch(`/admin/delete_user/${id}`)
+                            .then(res => res.json())
+                            .catch(error => console.error('Error:', error))
+                            .then(response => {
+                                location.replace('/dash/evaluadores')
+                            });
+                    })
+
+                    $('#editEvaluator').submit( async e => {
+                        e.preventDefault()
+                        let data = new FormData()
+                        let id = localStorage.getItem('currentId')
+
+                        data.append('id', id)
+                        data.append('first_name', $("#edit-firstName").val())
+                        data.append('last_name', $("#edit-lastName").val())
+                        data.append('username', $("#edit-username").val())
+                        data.append('email', $("#edit-email").val())
+
+                        fetch('/admin/update_user', {
+                            method: 'POST', // or 'PUT'
+                            body: data, // data can be `string` or {object}!
+                        })
+                            .then(res => res.json())
+                            .catch(error => console.error('Error:', error))
+                            .then(response => {
+                                if(response.length >= 1){
+                                    location.replace('/dash/evaluadores')
+                                }
+                            });
+                    })
+                </script>
+
+                {% block add_evaluator%}
+                    {% include './addEvaluatorModal.html' %}
+                {% endblock%}
             </div>
         </div>
-
-
         
     </section>
 {% endblock %}
