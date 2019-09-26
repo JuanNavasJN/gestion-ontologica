@@ -7,4 +7,5 @@ urlpatterns = [
     path('dash', views.DashboardView.as_view(), name='dashboard'),
     path('dash/evaluadores', views.evaluators, name='evaluadores'),
     path('dash/aspirantes', views.applicants, name='aspirantes'),
+    path('dash/16pf', views.pfadmin, name='16pfadmin'),
 ]

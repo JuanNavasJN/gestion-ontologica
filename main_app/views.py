@@ -18,3 +18,7 @@ def evaluators(request):
 def applicants(request):
     applicants = CustomUser.objects.filter(role=2)
     return render(request, 'dashboard/aspirantes.html', {'applicants': applicants})
+
+def pfadmin(request):
+    # applicants = CustomUser.objects.filter(role=2)
+    return render(request, 'dashboard/16pf.html')
