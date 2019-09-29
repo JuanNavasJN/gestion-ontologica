@@ -11343,7 +11343,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sFirst": "First",
+				"sFirst": "Primera",
 	
 	
 				/**
@@ -11366,7 +11366,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sLast": "Last",
+				"sLast": "Última",
 	
 	
 				/**
