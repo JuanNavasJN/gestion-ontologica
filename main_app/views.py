@@ -22,3 +22,15 @@ def applicants(request):
 def pfadmin(request):
     # applicants = CustomUser.objects.filter(role=2)
     return render(request, 'dashboard/16pf.html')
+
+def ev_16pf(request):
+    return render(request, 'dashboard/evaluador/16pf.html')
+
+def ev_wartegg(request):
+    return render(request, 'dashboard/evaluador/wartegg.html')
+
+def ev_aspirante_16pf(request, id):
+     return render(request, 'dashboard/evaluador/aspirante_16pf.html')
+    
+def ev_aspirante_wartegg(request, id):
+     return render(request, 'dashboard/evaluador/aspirante_wartegg.html')

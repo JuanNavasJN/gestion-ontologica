@@ -12,3 +12,10 @@
     padding-left: 10vw;
     width: 91vw;
 }
+
+.custom-text-input{
+    border: 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #212529;
+    width: 50%;
+}
