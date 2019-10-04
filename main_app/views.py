@@ -11,6 +11,9 @@ class DashboardView(TemplateView):
 class EvaluadoresView(TemplateView):
     template_name = 'dashboard/evaluadores.html'
 
+def configuration(request):
+    return render(request, 'dashboard/config.html')
+
 def evaluators(request):
     evaluators = CustomUser.objects.filter(role=1)
     return render(request, 'dashboard/evaluadores.html', {'evaluators': evaluators})
@@ -31,6 +34,6 @@ def ev_wartegg(request):
 
 def ev_aspirante_16pf(request, id):
      return render(request, 'dashboard/evaluador/aspirante_16pf.html')
-    
+
 def ev_aspirante_wartegg(request, id):
      return render(request, 'dashboard/evaluador/aspirante_wartegg.html')
