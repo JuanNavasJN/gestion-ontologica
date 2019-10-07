@@ -10,6 +10,12 @@
 
         {% block main_content %}
 
+            <script>
+                if("{{ user.get_updated_password }}" !== "True"){
+                    location.replace("/dash/config")
+                }
+            </script>
+
             <section class="content">
                 <h1>Bienvenido {{ user.get_full_name }}!</h1>
             </section>

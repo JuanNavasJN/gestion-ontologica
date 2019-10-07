@@ -1,5 +1,5 @@
 const factors = [
-  'B Razonamienton',
+  'B Razonamiento',
   'A Afabilidad',
   'C Estabilidad',
   'E Dominancia',
@@ -20,8 +20,7 @@ const factors = [
 $(document).ready(function() {
 
     var dataSet = [
-  {id:1, question:"Lorem ipsum dolor sit amet consectetur adipisicing elit.", factor:"System Architect"},
-
+      {id:1, question:"Lorem ipsum dolor sit amet consectetur adipisicing elit.", factor:"System Architect"},
     ];
   
     var columnDefs = [{
@@ -33,9 +32,11 @@ $(document).ready(function() {
       data: "question",
       title: "Pregunta"
     },
-   {
+    {
       data: "factor",
-      title: "Factor"
+      title: "Factor",
+      type: "select",
+      options: factors
     }];
   
     var myTable;
@@ -65,8 +66,7 @@ $(document).ready(function() {
               name: 'delete'      // do not change name
            }]
     });
-  
-  
+      
   });
   
   

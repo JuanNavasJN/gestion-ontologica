@@ -20,14 +20,26 @@
                             </div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col">
-                                <input type="number" id="id" class="form-control" placeholder="Cédula" required>
+                            <div class="col-2">
+                                <select name="" id="" class="custom-select">
+                                    <option value="V" selected>V</option>
+                                    <option value="E">E</option>
+                                    <option value="P">P</option>
+                                </select>
+                            </div>
+                            <div class="col-10">
+                                <input type="number" id="id" class="form-control" placeholder="ID" pattern="[0-9]+" required>
                             </div>
                         </div>
                         
                         <div class="row mt-2">
                             <div class="col">
-                                <input type="email" id="email" class="form-control" placeholder="Correo" required>
+                                <input type="email" id="email" class="form-control" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Correo" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col" id="show-error">
+
                             </div>
                         </div>
                     </div>
@@ -61,6 +73,13 @@
               .then(response => {
                 if(response.length >= 1){
                     location.replace('/dash/aspirantes')
+                }else if(response.message){
+                    
+                    $('#show-error').html(`
+                        <div class="alert alert-danger mt-2" role="alert">
+                            Ya existe un usuario con ID ${$("#id").val()}
+                        </div>
+                    `)
                 }
               });
         })

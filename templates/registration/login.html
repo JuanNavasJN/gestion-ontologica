@@ -5,9 +5,27 @@
 {% block content %}
 <br><br> <br> 
 <h2>Ingresar</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-success ml-2" type="submit">Ingresar</button>
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="fieldWrapper">
+                    {{ form.username.errors }}
+                    <label for="{{ form.username.id_for_label }}">Usuario:</label>
+                    <input type="input" class="form-control" name="username" placeholder="Usuario" required >
+                </div>
+                <div class="fieldWrapper">
+                    {{ form.password.errors }}
+                    <label for="{{ form.password.id_for_label }}">Contraseña:</label>
+                    <input type="password" class="form-control" name="password"  placeholder="Contraseña" required>
+                </div>
+                <button class="btn btn-success ml-2 mt-3" type="submit">Ingresar</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
 {% endblock content %}

@@ -1,6 +1,6 @@
 {% block navbar %}
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark mb-4 fixed-top shadow" style="background-color: #5c6894">
 
     {% if user.get_role == '1' %}
         <a class="navbar-brand" href="{% url 'home' %}">Pruebas Psicométricas - Evaluador</a>
@@ -47,7 +47,7 @@
                         Cerrar sesión</a
                     >
                     <a class="dropdown-item" href="{% url 'config' %}">
-                        Actualizar contrasena</a
+                        Actualizar contraseña</a
                     >
                 </div>
             </li>
