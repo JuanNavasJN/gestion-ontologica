@@ -11,7 +11,7 @@
         {% block main_content %}
 
             <script>
-                if("{{ user.get_updated_password }}" == "True"){
+                if("{{ user.get_updated_password }}" !== "True"){
                     location.replace("/dash/change_password")
                 }
             </script>

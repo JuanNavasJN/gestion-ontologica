@@ -5,7 +5,6 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 
-
 class HomePageView(TemplateView):
     template_name = 'home.html'
 
@@ -31,6 +30,9 @@ def change_password(request):
     return render(request, 'dashboard/change_password.html', {
         'form': form
     })
+
+def configuration(request):
+    return render(request, 'dashboard/config.html')
 
 def evaluators(request):
     evaluators = CustomUser.objects.filter(role=1)

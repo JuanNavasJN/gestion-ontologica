@@ -6,6 +6,7 @@ urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
     path('dash', views.DashboardView.as_view(), name='dashboard'),
     path('dash/change_password', views.change_password, name='change_password'),
+    path('dash/config', views.configuration, name='config'),
     path('dash/evaluadores', views.evaluators, name='evaluadores'),
     path('dash/aspirantes', views.applicants, name='aspirantes'),
     path('dash/16pf', views.pfadmin, name='16pfadmin'),
