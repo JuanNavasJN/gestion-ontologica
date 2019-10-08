@@ -3,7 +3,7 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-       
+
         {% block sidebar %}
             {% include './sidebar.html' %}
         {% endblock %}
@@ -11,8 +11,8 @@
         {% block main_content %}
 
             <script>
-                if("{{ user.get_updated_password }}" !== "True"){
-                    location.replace("/dash/config")
+                if("{{ user.get_updated_password }}" == "True"){
+                    location.replace("/dash/change_password")
                 }
             </script>
 
@@ -22,7 +22,7 @@
             </section>
 
         {% endblock %}
-          
+
     {% else %}
         <script>
             location.replace("/")
