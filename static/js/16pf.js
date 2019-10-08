@@ -1,6 +1,6 @@
 const factors = [
-  'B Razonamiento',
   'A Afabilidad',
+  'B Razonamiento',
   'C Estabilidad',
   'E Dominancia',
   'F Animación',  
