@@ -23,8 +23,8 @@ def change_password(request):
             update_session_auth_hash(request, user)  # Important!
 
             return redirect('change_password')
-        else:
-            messages.error(request, 'Porfavor corriga el error.')
+        #else:
+        #    messages.error(request, 'Porfavor corriga el error.')
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'dashboard/change_password.html', {
