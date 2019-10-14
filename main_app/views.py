@@ -34,6 +34,7 @@ def change_password(request):
 def configuration(request):
     return render(request, 'dashboard/config.html')
 
+
 def evaluators(request):
     evaluators = CustomUser.objects.filter(role=1)
     return render(request, 'dashboard/evaluadores.html', {'evaluators': evaluators})
