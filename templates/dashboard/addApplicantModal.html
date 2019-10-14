@@ -20,6 +20,20 @@
                             </div>
                         </div>
                         <div class="row mt-2">
+                            <div class="col">
+                                <label for="">Fecha de Nacimiento</label>
+                                <input type="date" id="dateBorn" class="form-control" placeholder="Fecha de nacimiento" required>
+                            </div>
+                            <div class="col">
+                                <label for="">Sexo</label>
+                                <select name="" id="gender" class="form-control">
+                                    <option value="femenino">Femenino</option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
                             <div class="col-3">
                                 <select name="" id="" class="custom-select">
                                     <option value="V" selected>V</option>
@@ -64,7 +78,9 @@
             data.append('last_name', $("#lastName").val())
             data.append('id', $("#id").val())
             data.append('email', $("#email").val())
-
+            data.append('gender', $('#gender').val())
+            data.append('date_born', $('#dateBorn').val())
+            
             fetch('/admin/add_applicant', {
                 method: 'POST', // or 'PUT'
                 body: data, // data can be `string` or {object}!

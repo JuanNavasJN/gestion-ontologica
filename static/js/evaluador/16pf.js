@@ -51,7 +51,6 @@ $(document).ready(function() {
       columns: columnDefs,
       dom: 'Bfrtip',        // Needs button container
       select: 'single',
-      responsive: true,
       altEditor: true,     // Enable altEditor
       buttons: []
   });

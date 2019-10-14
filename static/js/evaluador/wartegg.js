@@ -19,7 +19,7 @@ const dataSet = [
     },
     {
         id: 4,
-        aspirante: 'Fiorella Infante',
+        aspirante: 'Carla Infante',
         fecha_test: '09/08/2019',
         evaluador: '001',
     }
@@ -58,7 +58,6 @@ const dataSet = [
         columns: columnDefs,
         dom: 'Bfrtip',        // Needs button container
         select: 'single',
-        responsive: true,
         altEditor: true,     // Enable altEditor
         buttons: []
     });

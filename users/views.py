@@ -16,7 +16,7 @@ def add_user(data, option):
         if option == "evaluator" :
             user = 1 
 
-        u = CustomUser(username=data['id'], first_name=data['first_name'], last_name=data['last_name'], email=data['email'], role=user)
+        u = CustomUser(username=data['id'], first_name=data['first_name'], last_name=data['last_name'], email=data['email'], role=user, date_born=data['date_born'], gender=data['gender'])
         u.set_password(data['id'])
         u.save()
         users = CustomUser.objects.all().values('id', 'username', 'first_name', 'last_name', 'email', 'role')
@@ -46,7 +46,8 @@ def add_applicant(request):
 @csrf_exempt
 def update_user(request):
     data = request.POST
-    user = CustomUser.objects.filter(id=data['id']).update(first_name=data['first_name'], last_name=data['last_name'], email=data['email'], username=data['username'])
+    print(data['gender'])
+    user = CustomUser.objects.filter(id=data['id']).update(first_name=data['first_name'], last_name=data['last_name'], email=data['email'], username=data['username'], gender=data['gender'], date_born=data['date_born'])
     users = CustomUser.objects.all().values('id', 'username', 'first_name', 'last_name', 'email', 'role')
     users_list = list(users)
     return JsonResponse(users_list, safe=False)
@@ -63,11 +64,11 @@ def get_evaluators(request):
     return JsonResponse(users_list, safe=False)
 
 def get_applicants(request):
-    users = CustomUser.objects.filter(role=2).values('id', 'username', 'first_name', 'last_name', 'email', 'role')
+    users = CustomUser.objects.filter(role=2).values('id', 'username', 'first_name', 'last_name', 'email', 'role', 'date_born', 'gender')
     users_list = list(users)
     return JsonResponse(users_list, safe=False)
 
 def get_user(request, id=1):
-    user = CustomUser.objects.filter(id=id).values('id', 'username', 'first_name', 'last_name', 'email', 'role')
+    user = CustomUser.objects.filter(id=id).values('id', 'username', 'first_name', 'last_name', 'email', 'role', 'date_born', 'gender')
     user = list(user)[0]
     return JsonResponse(user, safe=False)

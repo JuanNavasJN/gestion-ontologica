@@ -19,13 +19,29 @@
                 <div class="fieldWrapper">
                     {{ form.password.errors }}
                     <label for="{{ form.password.id_for_label }}">Contraseña:</label>
-                    <input type="password" class="form-control" name="password"  placeholder="Contraseña" required>
+                    <input type="password" id="input-password" class="form-control" name="password"  placeholder="Contraseña" required>
+                </div>
+                <div class="fieldWrapper">
+                    <label >Mostrar contraseña:</label>
+                    <input type="checkbox" id="show-pass">
                 </div>
                 <button class="btn btn-success ml-2 mt-3" type="submit">Ingresar</button>
             </form>
         </div>
     </div>
     
+    <script>
+
+        $('#show-pass').click( e => {
+            let checked = $('#show-pass').is(':checked')
+
+            if(checked){
+                $('#input-password').attr("type", "text")
+            }else{
+                $('#input-password').attr("type", "password")
+            }
+        })
+    </script>
 </div>
 
 {% endblock content %}

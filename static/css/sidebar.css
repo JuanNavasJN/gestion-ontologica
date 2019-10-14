@@ -5,6 +5,7 @@
     width: 15vw;
     height: 92vh;
     background-color: #d4d3ca;
+    z-index: 99;
 }
 .sidebar ul{
     padding: 0;

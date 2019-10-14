@@ -63,6 +63,20 @@
                                         </div>
                                     </div>
                                     <div class="row mt-2">
+                                        <div class="col">
+                                            <label for="">Fecha de Nacimiento</label>
+                                            <input type="date" id="edit-date_born" class="form-control" placeholder="Fecha de nacimiento" required>
+                                        </div>
+                                        <div class="col">
+                                            <label for="">Sexo</label>
+                                            <select name="" id="edit-gender" class="form-control">
+                                                <option value="femenino">Femenino</option>
+                                                <option value="masculino">Masculino</option>
+                                                <option value="otro">Otro</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
                                         <div class="col-2">
                                             <select name="" id="" class="custom-select" disabled>
                                                 <option value="V" selected>V</option>
@@ -102,12 +116,13 @@
                             .then(response => {
                                 //console.log('Success:', response)
                                 localStorage.setItem('currentId', response.id)
-                                
-                                const { first_name, last_name, email, username} = response
+                                const { first_name, last_name, email, username, date_born, gender} = response
                                 $('#edit-firstName').val(first_name)
                                 $('#edit-lastName').val(last_name)
                                 $('#edit-email').val(email)
                                 $('#edit-username').val(username)
+                                $('#edit-gender').val(gender)
+                                $('#edit-date_born').val(date_born)
                             });
                     })
 
@@ -132,6 +147,8 @@
                         data.append('last_name', $("#edit-lastName").val())
                         data.append('username', $("#edit-username").val())
                         data.append('email', $("#edit-email").val())
+                        data.append('date_born', $("#edit-date_born").val())
+                        data.append('gender', $("#edit-gender").val())
 
                         fetch('/admin/update_user', {
                             method: 'POST', // or 'PUT'
