@@ -12,8 +12,14 @@ body{
 
 .content{
     padding-top: 6vw;
-    padding-left: 10vw;
-    width: 91vw;
+    padding-left: 18%;
+    width: 98%;
+}
+
+.content2{
+  padding-top: 7vw;
+  padding-left: 12%;
+  width: 90%;
 }
 
 .custom-text-input{
@@ -47,3 +53,12 @@ body{
   .custom-file-input:active::before {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
   }
+
+  .timer{
+    position: fixed; 
+    top: 10vh; 
+    left: 10px; 
+    width: 150px; 
+    padding: 10px
+  }
+

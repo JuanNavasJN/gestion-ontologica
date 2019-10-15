@@ -9,7 +9,14 @@ class HomePageView(TemplateView):
     template_name = 'home.html'
 
 class DashboardView(TemplateView):
-    template_name = 'dashboard/index.html'
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated :
+            if request.user.role == 2:
+                return render(request, "dashboard/aspirante/home.html")
+            else:
+                return render(request, "dashboard/index.html")
+        else:
+            return redirect("/users/login/")
 
 class EvaluadoresView(TemplateView):
     template_name = 'dashboard/evaluadores.html'
@@ -34,7 +41,6 @@ def change_password(request):
 def configuration(request):
     return render(request, 'dashboard/config.html')
 
-
 def evaluators(request):
     evaluators = CustomUser.objects.filter(role=1)
     return render(request, 'dashboard/evaluadores.html', {'evaluators': evaluators})
@@ -58,3 +64,10 @@ def ev_aspirante_16pf(request, id):
 
 def ev_aspirante_wartegg(request, id):
      return render(request, 'dashboard/evaluador/aspirante_wartegg.html')
+
+def aspirante_home(request):
+    return render(request, 'dashboard/aspirante/home.html')
+
+def aspirante_16pf(request):
+    questions = range(1, 186)
+    return render(request, 'dashboard/aspirante/test16pf.html', { 'questions': questions})

@@ -4,7 +4,11 @@
 
     {% if user.get_role == '1' %}
         <a class="navbar-brand" href="{% url 'home' %}">Pruebas Psicométricas - Evaluador</a>
-    {% else%}
+    {% elif user.get_role == '0' %}
+        <a class="navbar-brand" href="{% url 'home' %}">Pruebas Psicométricas - Administrador</a>
+    {% elif user.get_role == '2' %}
+        <a class="navbar-brand" href="{% url 'home' %}">Pruebas Psicométricas - 16PF</a>
+    {% else %}
         <a class="navbar-brand" href="{% url 'home' %}">Pruebas Psicométricas</a>
     {% endif %}
 

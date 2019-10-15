@@ -14,4 +14,6 @@ urlpatterns = [
     path('dash/evaluador/wartegg', views.ev_wartegg, name='waterggevaluador'),
     path('dash/evaluador/16pf/<int:id>', views.ev_aspirante_16pf, name='16pfevaluador_aspirante'),
     path('dash/evaluador/wartegg/<int:id>', views.ev_aspirante_wartegg, name='waterggevaluador_aspirante'),
+    path('dash/aspirante', views.aspirante_home, name='aspirante_home'),
+    path('dash/aspirante/16pf', views.aspirante_16pf, name='aspirante_16pf'),
 ]

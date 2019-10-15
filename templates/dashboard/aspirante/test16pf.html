@@ -1,0 +1,46 @@
+{% extends '../index.html' %}
+
+{% load static %}
+
+{% block main_content %}
+    <div class="bg-light  border rounded" style="position: fixed; top: 10vh; left: 10px; width: 150px; padding: 10px">
+        Tiempo restante: <br> 45 minutos
+    </div>
+
+    <section class="content2">
+        <div class="container">
+    
+            {% for i in questions %}
+                <div class="row bg-light mt-3 m-0 p-3 border rounded">
+                    <div class="col-1">
+                        <b>{{ i }} )</b>
+                    </div>
+                    <div class="col-7">
+                        Me encanta idear nuevas formas de hacer las cosas
+                    </div>
+                    <div class="col-4">
+                        <label for="" >1</label>
+                        <input type="radio" name="{{ i }}">
+                        <label for="" style="padding-left: 10px">2</label>
+                        <input type="radio" name="{{ i }}">
+                        <label for="" style="padding-left: 10px">3</label>
+                        <input type="radio" name="{{ i }}">
+                        <label for="" style="padding-left: 10px">4</label>
+                        <input type="radio" name="{{ i }}">
+                        <label for="" style="padding-left: 10px">5</label>
+                        <input type="radio" name="{{ i }}">
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="row text-center m-4">
+                <div class="col-12 text-center">
+                    <a class="btn btn-success" href="/dash/aspirante">
+                        Enviar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+{% endblock %}
