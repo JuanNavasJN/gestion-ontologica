@@ -4,6 +4,7 @@ from users.models import CustomUser
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
+from .models import Question
 
 class HomePageView(TemplateView):
     template_name = 'home.html'
@@ -50,8 +51,19 @@ def applicants(request):
     return render(request, 'dashboard/aspirantes.html', {'applicants': applicants})
 
 def pfadmin(request):
-    # applicants = CustomUser.objects.filter(role=2)
-    return render(request, 'dashboard/16pf.html')
+    if request.method == 'POST':
+        if request.POST.get('pregunta') and request.POST.get('factor'):
+            post=Question()
+            post.text = request.POST.get('pregunta')
+            post.factor = request.POST.get('factor')
+            post.points= 0
+            post.complete= False
+            post.save()
+            ls = Question.objects.all()
+            return render(request, 'dashboard/16pf.html', {'ls': ls} )
+    else:
+            ls = Question.objects.all()
+            return render(request,'dashboard/16pf.html', {'ls': ls})
 
 def ev_16pf(request):
     return render(request, 'dashboard/evaluador/16pf.html')
