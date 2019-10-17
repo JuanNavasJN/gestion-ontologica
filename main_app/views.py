@@ -82,4 +82,5 @@ def aspirante_home(request):
 
 def aspirante_16pf(request):
     questions = range(1, 186)
-    return render(request, 'dashboard/aspirante/test16pf.html', { 'questions': questions})
+    ls = Question.objects.all()
+    return render(request, 'dashboard/aspirante/test16pf.html', { 'ls': ls}, { 'questions': questions})
