@@ -65,6 +65,8 @@
             data.append('last_name', $("#lastName").val())
             data.append('id', $("#id").val())
             data.append('email', $("#email").val())
+            data.append('gender', null)
+            data.append('date_born', '2019-10-16')
 
             fetch('/admin/add_evaluator', {
                 method: 'POST', // or 'PUT'
