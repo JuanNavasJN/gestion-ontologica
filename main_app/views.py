@@ -84,3 +84,10 @@ def aspirante_16pf(request):
     questions = range(1, 186)
     ls = Question.objects.all()
     return render(request, 'dashboard/aspirante/test16pf.html', { 'ls': ls}, { 'questions': questions})
+
+def del_16pf(request,id = None):
+    object = Question.objects.get(id=id)
+    object.delete()
+    ls = Question.objects.all()
+    return render(request,'dashboard/16pf.html', {'ls': ls})
+    
