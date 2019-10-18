@@ -2,6 +2,8 @@ from django.urls import path
 
 from . import views
 
+from main_app.views import PDFAspirante
+
 urlpatterns = [
     path('', views.HomePageView.as_view(), name='home'),
     path('dash', views.DashboardView.as_view(), name='dashboard'),
@@ -16,4 +18,8 @@ urlpatterns = [
     path('dash/evaluador/wartegg/<int:id>', views.ev_aspirante_wartegg, name='waterggevaluador_aspirante'),
     path('dash/aspirante', views.aspirante_home, name='aspirante_home'),
     path('dash/aspirante/16pf', views.aspirante_16pf, name='aspirante_16pf'),
+    path('dash/aspirante/16pf2', views.aspirante_16pf2, name='aspirante_16pf2'),
+    path('dash/aspirante/16pf3', views.aspirante_16pf3, name='aspirante_16pf3'),
+    path('dash/aspirantepdf', views.aspirantepdf, name='aspirantepdf'),
+    path('dash/aspiranteend', views.aspiranteend, name='aspiranteend')
 ]

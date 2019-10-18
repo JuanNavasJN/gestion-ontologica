@@ -15,11 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls import url
+
+from main_app.views import PDFAspirante
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
     path('users/', include('django.contrib.auth.urls')),
     path('', include('main_app.urls')),
-     path('', include('users.urls')),
+    path('', include('users.urls')),
+    url(r'^userpdf/$', PDFAspirante.as_view(), name='userpdf'),
 ]
